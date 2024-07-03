@@ -24,6 +24,10 @@ export default function Ref() {
     }
   }
 
+  //   function handleSubmit() {
+  //     alert("form!!!");
+  //   }
+
   useEffect(() => {
     firstNameRef.current.focus();
   }, []);
@@ -48,6 +52,7 @@ export default function Ref() {
         <button
           ref={submitRef}
           onKeyDown={submitKeyDown}
+          //   onClick={handleSubmit}
           className="border border-green-400 text-white p-1.5 bg-green-400 rounded-md px-4"
         >
           Submit
