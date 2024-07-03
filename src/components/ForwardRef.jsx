@@ -1,37 +1,11 @@
-import { useEffect } from "react";
-import { useRef } from "react";
-
-export default function Ref() {
-  const firstNameRef = useRef(null);
-  const secondNameRef = useRef(null);
-  const submitRef = useRef(null);
-
-  function firstKeyDown(e) {
-    if (e.key === "Enter") {
-      secondNameRef.current.focus();
-    }
-  }
-
-  function secondKeyDown(e) {
-    if (e.key === "Enter") {
-      submitRef.current.focus();
-    }
-  }
-
-  function submitKeyDown(e) {
-    if (e.key === "Enter") {
-      alert("Form Submitted!");
-    }
-  }
-
-  //   function handleSubmit() {
-  //     alert("form!!!");
-  //   }
-
-  useEffect(() => {
-    firstNameRef.current.focus();
-  }, []);
-
+export default function ForwardRef({
+  firstNameRef,
+  secondNameRef,
+  submitRef,
+  firstKeyDown,
+  secondKeyDown,
+  submitKeyDown,
+}) {
   return (
     <div>
       <div className="pt-10 justify-center items-center flex flex-col gap-6">
