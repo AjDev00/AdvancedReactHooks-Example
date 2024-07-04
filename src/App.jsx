@@ -1,5 +1,6 @@
 import "./App.css";
 import ForwardRef from "./components/ForwardRef";
+import Reducer from "./components/Reducer";
 import Ref from "./components/Ref";
 import { useRef, useEffect } from "react";
 
@@ -34,6 +35,7 @@ function App() {
     <div className="App">
       <Ref />
       <div className="pt-10 justify-center items-center flex flex-col gap-6">
+        <h3 className="font-semibold underline">forwardRef</h3>
         <ForwardRef
           type="text"
           placeholder="Enter First Name"
@@ -65,6 +67,11 @@ function App() {
         secondKeyDown={secondKeyDown}
         submitKeyDown={submitKeyDown}
       /> */}
+
+      {/* //useReducer. */}
+      <div>
+        <Reducer />
+      </div>
     </div>
   );
 }

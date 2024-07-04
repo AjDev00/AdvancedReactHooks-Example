@@ -35,6 +35,7 @@ export default function Ref() {
   return (
     <div>
       <div className="pt-10 justify-center items-center flex flex-col gap-6">
+        <h3 className="font-semibold underline">useRef</h3>
         <input
           type="text"
           placeholder="Enter First Name"
