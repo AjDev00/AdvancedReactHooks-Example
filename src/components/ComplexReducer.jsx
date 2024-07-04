@@ -1,19 +1,25 @@
-//simple counter with useReducer.
+//complex counter with useReducer.
 import { useReducer } from "react";
 
-export default function Reducer() {
-  //initialState of the counter.
-  const initialState = 0;
+export default function ComplexReducer() {
+  //initialState is an object that holds the firstCounter variable of the counter.
+  const initialState = {
+    firstCounter: 0,
+  };
 
-  //the reducer function.
+  //the reducer function. the type is the type of operation that wants to be performed.
   function reducer(state, action) {
-    switch (action) {
+    switch (action.type) {
       case "increment":
-        return state + 1;
+        return { firstCounter: state.firstCounter + 1 };
 
       case "decrement":
-        //decrement if state value can be deducted by one, if not return the initialState value.
-        return state ? state - 1 : initialState;
+        //decrement if firstCounter value can be deducted by one, if not return the initialState value.
+        return {
+          firstCounter: state.firstCounter
+            ? state.firstCounter - 1
+            : state.firstCounter,
+        };
 
       case "reset":
         return initialState;
@@ -32,25 +38,25 @@ export default function Reducer() {
       <div className="pt-20">
         <div className="flex flex-col justify-center items-center">
           <h3 className="font-semibold underline">useReducer</h3>
-          <div>Count = {count}</div>
+          <div>Count = {count.firstCounter}</div>
         </div>
         <br />
         <div className="flex flex-row gap-4 justify-center items-center">
           <button
             className="border border-transparent shadow-md p-2 rounded-md bg-green-400 text-white"
-            onClick={() => dispatch("increment")}
+            onClick={() => dispatch({ type: "increment" })}
           >
             Increment
           </button>
           <button
             className="border border-transparent shadow-md p-2 rounded-md bg-green-400 text-white"
-            onClick={() => dispatch("decrement")}
+            onClick={() => dispatch({ type: "decrement" })}
           >
             Decrement
           </button>
           <button
             className="border border-transparent shadow-md p-2 rounded-md bg-red-400 text-white"
-            onClick={() => dispatch("reset")}
+            onClick={() => dispatch({ type: "reset" })}
           >
             Reset
           </button>

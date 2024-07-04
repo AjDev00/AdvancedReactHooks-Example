@@ -1,4 +1,5 @@
 import "./App.css";
+import ComplexReducer from "./components/ComplexReducer";
 import ForwardRef from "./components/ForwardRef";
 import Reducer from "./components/Reducer";
 import Ref from "./components/Ref";
@@ -71,6 +72,9 @@ function App() {
       {/* //useReducer. */}
       <div>
         <Reducer />
+      </div>
+      <div>
+        <ComplexReducer />
       </div>
     </div>
   );
